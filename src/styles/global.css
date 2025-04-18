@@ -6,6 +6,8 @@
   --breakpoint-desktop: 64rem;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
@@ -18,4 +20,9 @@
 
 a {
   @apply cursor-pointer border-b border-b-amber-400 hover:bg-amber-300 transition duration-75;
+}
+
+html,
+body {
+  @apply m-0 w-full h-full dark:bg-[#131313] dark:text-white flex flex-col;
 }
