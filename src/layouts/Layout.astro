@@ -1,6 +1,7 @@
 ---
 import "./src/styles/global.css";
 import ThemeButton from "../components/ThemeButton";
+import { Font } from "astro:assets";
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ import ThemeButton from "../components/ThemeButton";
         document.documentElement.classList.add("dark");
       }
     </script>
+    <Font cssVariable="--font-figtree" preload />
   </head>
   <body>
     <slot />

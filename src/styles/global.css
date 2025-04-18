@@ -4,6 +4,9 @@
   --breakpoint-*: initial;
   --breakpoint-tablet: 40rem;
   --breakpoint-desktop: 64rem;
+
+  --font-*: initial;
+  --font-sans: var(--font-figtree), sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -13,7 +16,7 @@
   padding-inline: 1rem;
 
   @variant desktop {
-    max-width: 46rem;
+    max-width: 44rem;
     padding-inline: 2rem;
   }
 }
@@ -24,5 +27,9 @@ a {
 
 html,
 body {
-  @apply m-0 w-full h-full dark:bg-[#131313] dark:text-white flex flex-col;
+  @apply m-0 w-full h-full;
+}
+
+body {
+  @apply m-0 w-full h-full dark:bg-[#131313] dark:text-white flex flex-col font-sans;
 }
