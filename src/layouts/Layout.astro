@@ -26,20 +26,24 @@ import { Font } from "astro:assets";
   </head>
   <body>
     <slot />
-    <div class="w-full mt-auto flex items-center border-t border-white/10">
-      <div class="container flex py-4 gap-2 text-sm">
-        <div class="opacity-20">Copyright © Ben Bachem</div>
+    <div
+      class="w-full mt-auto flex items-center border-t dark:border-neutral-230 border-neutral-910"
+    >
+      <div
+        class="container flex py-4 gap-2 text-sm dark:text-neutral-380 text-neutral-640"
+      >
+        <div>Copyright © Ben Bachem</div>
         <div class="ml-auto flex gap-2">
           <ThemeButton
             client:load
             mode="dark"
-            className="cursor-pointer opacity-10 hover:opacity-100"
+            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black"
             >Dark</ThemeButton
           >
           <ThemeButton
             client:load
             mode="light"
-            className="cursor-pointer opacity-10 hover:opacity-100"
+            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black"
             >Light</ThemeButton
           >
         </div>

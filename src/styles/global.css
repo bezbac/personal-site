@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+:root {
+  --var-color-accent: oklch(0.67 0.1674 284.69);
+}
+
+:root[class~="dark"] {
+  --var-color-accent: oklch(0.72 0.13 126.28);
+}
+
 @theme {
   --breakpoint-*: initial;
   --breakpoint-tablet: 40rem;
@@ -7,6 +15,20 @@
 
   --font-*: initial;
   --font-sans: var(--font-figtree), sans-serif;
+
+  --color-*: initial;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-neutral-190: oklch(0.19 0 0);
+  --color-neutral-230: oklch(0.23 0 0);
+  --color-neutral-310: oklch(0.31 0 0);
+  --color-neutral-380: oklch(0.38 0 0);
+  --color-neutral-640: oklch(0.64 0 0);
+  --color-neutral-820: oklch(0.82 0 0);
+  --color-neutral-910: oklch(0.91 0 0);
+  --color-neutral-980: oklch(0.98 0 0);
+
+  --color-accent: var(--var-color-accent);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -21,15 +43,26 @@
   }
 }
 
-a {
-  @apply cursor-pointer border-b border-b-amber-400 hover:bg-amber-300 transition duration-75;
-}
-
 html,
 body {
   @apply m-0 w-full h-full;
 }
 
 body {
-  @apply m-0 w-full h-full dark:bg-[#131313] dark:text-white flex flex-col font-sans;
+  @apply m-0 w-full h-full bg-neutral-980 dark:bg-neutral-190 dark:text-white flex flex-col font-sans;
+}
+
+p {
+  @apply text-neutral-310 dark:text-neutral-820;
+}
+
+a {
+  @apply relative cursor-pointer border-b hover:border-accent hover:bg-accent transition duration-75 ring-2 ring-transparent hover:ring-accent rounded-xs;
+  @apply text-black hover:text-white border-neutral-820;
+  @apply dark:text-white dark:hover:text-black dark:border-neutral-380;
+}
+
+a.external::after {
+  @apply inline-block size-4 rotate-180 -ml-1 translate-y-2 mr-0.5;
+  content: "⟀";
 }
