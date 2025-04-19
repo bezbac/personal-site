@@ -43,6 +43,85 @@
   }
 }
 
+@utility link {
+  @apply relative cursor-pointer border-b hover:border-accent hover:bg-accent transition duration-75 ring-2 ring-transparent hover:ring-accent rounded-xs;
+  @apply text-black hover:text-white border-neutral-820;
+  @apply dark:text-white dark:hover:text-black dark:border-neutral-380;
+}
+
+@utility prose {
+  @apply text-justify text-neutral-310 dark:text-neutral-820;
+
+  ol,
+  ul {
+    @apply my-4;
+
+    ol,
+    ul {
+      @apply my-1;
+    }
+
+    li {
+      @apply my-1 ml-6;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        @apply my-1;
+      }
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+
+    ol {
+      @apply list-[lower-alpha];
+
+      ol {
+        @apply list-[lower-roman];
+      }
+    }
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  del {
+    @apply line-through opacity-60;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-4 font-medium empty:hidden text-black dark:text-white;
+  }
+
+  p {
+    @apply my-4 empty:hidden;
+  }
+
+  pre {
+    @apply text-sm p-2 rounded;
+  }
+
+  section.footnotes {
+    @apply mt-12 mb-20;
+  }
+
+  a {
+    @apply link;
+  }
+}
+
 html,
 body {
   @apply m-0 w-full h-full;
@@ -57,9 +136,7 @@ p {
 }
 
 a.link {
-  @apply relative cursor-pointer border-b hover:border-accent hover:bg-accent transition duration-75 ring-2 ring-transparent hover:ring-accent rounded-xs;
-  @apply text-black hover:text-white border-neutral-820;
-  @apply dark:text-white dark:hover:text-black dark:border-neutral-380;
+  @apply link;
 }
 
 a.external::after {

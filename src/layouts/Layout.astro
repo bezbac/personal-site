@@ -3,9 +3,28 @@ import "./src/styles/global.css";
 import ThemeButton from "../components/ThemeButton";
 import { Font } from "astro:assets";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import ScrambledText from "../components/ScrambledText";
+
+const currentPath = Astro.url.pathname;
 ---
 
-<!doctype html>
+<style>
+  .subtitle {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,6 +45,28 @@ import { IconMoon, IconSun } from "@tabler/icons-react";
     <Font cssVariable="--font-figtree" preload />
   </head>
   <body>
+    <div
+      class:list={[
+        "container",
+        currentPath === "/" ? "pt-12 desktop:pt-24" : "pt-8",
+      ]}
+    >
+      <div class="font-medium">
+        <a href="/">
+          <ScrambledText client:load text="Ben Bachem" />
+        </a>
+        {
+          currentPath.includes("blog") && (
+            <a
+              href="/blog"
+              class="subtitle text-neutral-380 hover:text-accent ml-1"
+            >
+              / writing
+            </a>
+          )
+        }
+      </div>
+    </div>
     <slot />
     <div
       class="w-full mt-auto flex items-center border-t dark:border-neutral-230 border-neutral-910"

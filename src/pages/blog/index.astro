@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).toSorted(
+  (a, b) => b.data.published.getTime() - a.data.published.getTime()
+);
+
+function formatDate(date: Date) {
+  return (
+    date.getFullYear() +
+    "-" +
+    (date.getMonth() + 1).toString().padStart(2, "0") +
+    "-" +
+    date.getDate().toString().padStart(2, "0")
+  );
+}
+---
+
+<Layout>
+  <div
+    class="absolute top-0 left-0 h-screen w-screen overflow-hidden select-auto pointer-events-none"
+  >
+    <div
+      class="absolute top-0 right-0 h-screen w-screen rounded-full blur-3xl lg:block bg-gradient-to-b from-accent/40 dark:from-accent/20 to-accent/0"
+      style="transform: translateY(-50%) translateX(50%);"
+    >
+    </div>
+  </div>
+  <div class="container mx-auto relative">
+    <h1 class="mt-12 font-medium">Writing</h1>
+    <ul class="text-neutral-310 dark:text-neutral-820 space-y-1 mt-4">
+      {
+        posts.map((post) => (
+          <li>
+            <span class="mr-2 text-neutral-640 tabular-nums">
+              {formatDate(post.data.published)}
+            </span>
+            <a href={`/blog/${post.id}`} class="link">
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
