@@ -32,6 +32,9 @@ dependencies:
   tailwindcss:
     specifier: ^4.1.4
     version: 4.1.4
+  use-scramble:
+    specifier: ^2.2.15
+    version: 2.2.15(react-dom@19.1.0)(react@19.1.0)
 
 packages:
 
@@ -3318,6 +3321,17 @@ packages:
       browserslist: 4.24.4
       escalade: 3.2.0
       picocolors: 1.1.1
+    dev: false
+
+  /use-scramble@2.2.15(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-3+ngTV6OpkY9JT75FM4JYcspmpP7cd/h0/5KqsMU2jcdBD+SAuBMmLqLu0N3/7t8NsfdwJjD3BBeKtT+qZWKew==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
     dev: false
 
   /vfile-location@5.0.3:

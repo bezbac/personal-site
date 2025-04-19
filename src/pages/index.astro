@@ -5,11 +5,14 @@ import {
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
+import ScrambledText from "../components/ScrambledText";
 ---
 
 <Layout>
   <div class="container mx-auto pt-12 desktop:pt-24">
-    <h1 class="text-lg font-medium">Ben Bachem</h1>
+    <h1 class="text-lg font-medium">
+      <ScrambledText client:load text="Ben Bachem" />
+    </h1>
     <p class="mt-4 text-justify">
       I consider myself as a digital generalist, with a primary focus on
       programming in my day-to-day endeavors. Beyond coding, I like approaching
