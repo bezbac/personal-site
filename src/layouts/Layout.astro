@@ -2,6 +2,7 @@
 import "./src/styles/global.css";
 import ThemeButton from "../components/ThemeButton";
 import { Font } from "astro:assets";
+import { IconMoon, IconSun } from "@tabler/icons-react";
 ---
 
 <!doctype html>
@@ -37,14 +38,16 @@ import { Font } from "astro:assets";
           <ThemeButton
             client:load
             mode="dark"
-            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black"
-            >Dark</ThemeButton
+            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black aria-selected:text-accent"
+            aria-label="Enable dark mode"
+            ><IconMoon className="size-4.5" /></ThemeButton
           >
           <ThemeButton
             client:load
             mode="light"
-            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black"
-            >Light</ThemeButton
+            className="cursor-pointer dark:hover:text-neutral-820 hover:text-black aria-selected:text-accent"
+            aria-label="Enable light mode"
+            ><IconSun className="size-4.5" /></ThemeButton
           >
         </div>
       </div>
