@@ -14,7 +14,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout>
+<Layout breadcrumb={{ title: "writing", href: "/blog" }}>
   <article class="container prose pt-12">
     <h1>
       {post.data.title}

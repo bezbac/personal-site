@@ -56,12 +56,12 @@ const currentPath = Astro.url.pathname;
           <ScrambledText client:load text="Ben Bachem" />
         </a>
         {
-          currentPath.includes("blog") && (
+          currentPath !== "/" && (
             <a
-              href="/blog"
+              href={Astro.props.breadcrumb.href}
               class="subtitle text-neutral-380 hover:text-accent ml-1"
             >
-              / writing
+              / {Astro.props.breadcrumb.title}
             </a>
           )
         }
