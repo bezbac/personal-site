@@ -9,7 +9,16 @@ import ScrambledText from "../components/ScrambledText";
 ---
 
 <Layout>
-  <div class="container mx-auto pt-12 desktop:pt-24">
+  <div
+    class="absolute top-0 left-0 h-screen w-screen overflow-hidden select-auto pointer-events-none"
+  >
+    <div
+      class="absolute top-0 right-0 h-screen w-screen rounded-full blur-3xl lg:block bg-gradient-to-b from-accent/40 dark:from-accent/20 to-accent/0"
+      style="transform: translateY(-50%) translateX(50%);"
+    >
+    </div>
+  </div>
+  <div class="container mx-auto pt-12 desktop:pt-24 relative">
     <h1 class="text-lg font-medium">
       <ScrambledText client:load text="Ben Bachem" />
     </h1>
