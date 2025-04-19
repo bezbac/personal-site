@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import {
+  IconBrandBluesky,
+  IconBrandGithub,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 ---
 
 <Layout>
@@ -10,13 +15,13 @@ import Layout from "../layouts/Layout.astro";
       programming in my day-to-day endeavors. Beyond coding, I like approaching
       digital products as a whole, delving into all connected topics such as
       design and product.<br /><br /> In my current role as a Founding Engineer at
-      <a class="external" href="https://superchat.com" target="_blank"
+      <a class="link external" href="https://superchat.com" target="_blank"
         >Superchat</a
       > I'm leading a small team working on our web products and trying to grow Superchat
       into the ultimate communication tool for small & medium-sized businesses.<br
       /><br /> Prior to this, I earned a bachelor's degree in software engineering
       from
-      <a class="external" href="https://code.berlin" target="_blank"
+      <a class="link external" href="https://code.berlin" target="_blank"
         >CODE University</a
       > where I graduated in 2022.
     </p>
@@ -24,25 +29,38 @@ import Layout from "../layouts/Layout.astro";
     <h2 class="mt-12 text-lg font-medium">Connect</h2>
 
     <p class="mt-4">
-      Reach me at <a href="https://bsky.app/profile/bezbac.me" target="_blank"
-        >@bezbac</a
-      > or <a href="mailto:hello@benbachem.de" target="_blank"
+      Message me at <a
+        class="link"
+        href="https://bsky.app/profile/bezbac.me"
+        target="_blank">@bezbac</a
+      > or <a class="link" href="mailto:hello@benbachem.de" target="_blank"
         >hello@benbachem.de</a
-      >
+      >. Or connect with me on social media:
     </p>
 
-    <h2 class="mt-12 text-lg font-medium">Links</h2>
-
-    <ul class="mt-4 flex gap-x-2">
+    <ul class="mt-2 flex -ml-1 gap-0.5">
       <li>
-        <a href="https://github.com/bezbac" target="_blank">GitHub</a>
+        <a
+          href="https://github.com/bezbac"
+          target="_blank"
+          class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-neutral-380 hover:text-black dark:text-neutral-820 dark:hover:text-white"
+          ><IconBrandGithub className="size-5" /></a
+        >
       </li>
       <li>
-        <a href="https://bsky.app/profile/bezbac.me" target="_blank">BlueSky</a>
+        <a
+          href="https://bsky.app/profile/bezbac.me"
+          target="_blank"
+          class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-neutral-380 hover:text-black dark:text-neutral-820 dark:hover:text-white"
+          ><IconBrandBluesky className="size-5" /></a
+        >
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/ben-bachem" target="_blank"
-          >LinkedIn</a
+        <a
+          href="https://www.linkedin.com/in/ben-bachem"
+          target="_blank"
+          class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-neutral-380 hover:text-black dark:text-neutral-820 dark:hover:text-white"
+          ><IconBrandLinkedin className="size-5" /></a
         >
       </li>
     </ul>

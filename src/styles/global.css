@@ -56,7 +56,7 @@ p {
   @apply text-neutral-310 dark:text-neutral-820;
 }
 
-a {
+a.link {
   @apply relative cursor-pointer border-b hover:border-accent hover:bg-accent transition duration-75 ring-2 ring-transparent hover:ring-accent rounded-xs;
   @apply text-black hover:text-white border-neutral-820;
   @apply dark:text-white dark:hover:text-black dark:border-neutral-380;
