@@ -20,6 +20,11 @@ export default defineConfig({
         name: "Figtree",
         cssVariable: "--font-figtree",
       },
+      {
+        provider: fontProviders.google(),
+        name: "Fira Code",
+        cssVariable: "--font-fira-code",
+      },
     ],
   },
 });
