@@ -4,6 +4,7 @@ import ThemeButton from "../components/ThemeButton";
 import { Font } from "astro:assets";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 import ScrambledText from "../components/ScrambledText";
+import Menu from "../components/Menu";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -55,16 +56,9 @@ const currentPath = Astro.url.pathname;
         <a href="/">
           <ScrambledText client:load text="Ben Bachem" />
         </a>
-        {
-          currentPath !== "/" && (
-            <a
-              href={Astro.props.breadcrumb.href}
-              class="subtitle text-neutral-380 hover:text-accent ml-1"
-            >
-              / {Astro.props.breadcrumb.title}
-            </a>
-          )
-        }
+        <Menu client:load>
+          / {Astro.props.breadcrumb.title}
+        </Menu>
       </div>
     </div>
     <slot />
