@@ -127,8 +127,13 @@ There's definitely room to improve this approach. The most obvious enhancement w
 For those interested in my complete setup, check out my dotfiles: https://github.com/bezbac/dotfiles
 
 [^1]: https://wezterm.org
+
 [^2]: https://zellij.dev
+
 [^3]: https://iterm2.com
+
 [^4]: https://alacritty.org
+
 [^5]: https://wezterm.org/config/lua/config/hyperlink_rules.html
+
 [^6]: https://github.com/sharkdp/fd

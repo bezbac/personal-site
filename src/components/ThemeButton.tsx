@@ -10,7 +10,7 @@ export default function ThemeButton(
     mode: "light" | "dark";
     className?: string;
     "aria-label"?: string;
-  }>
+  }>,
 ) {
   const [currentMode, setCurrentMode] = useState<"light" | "dark">();
 

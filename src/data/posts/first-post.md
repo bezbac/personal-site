@@ -19,5 +19,7 @@ This blog should be my digital business card - my digital introduction - a place
 Plus, I just really like building websites.
 
 [^1]: https://paco.me
+
 [^2]: https://petargyurov.com/bookshelf/
+
 [^3]: https://yoshuawuyts.com

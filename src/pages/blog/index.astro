@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 const posts = (await getCollection("blog")).toSorted(
-  (a, b) => b.data.published.getTime() - a.data.published.getTime()
+  (a, b) => b.data.published.getTime() - a.data.published.getTime(),
 );
 
 function formatDate(date: Date) {
