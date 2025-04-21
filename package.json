@@ -2,14 +2,6 @@
   "name": "",
   "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format-check": "prettier --check .",
-    "format-write": "prettier --write ."
-  },
   "dependencies": {
     "@astrojs/react": "^4.2.4",
     "@tabler/icons-react": "^3.31.0",
@@ -25,5 +17,9 @@
   "devDependencies": {
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1"
-  }
+  },
+  "engines": {
+    "node": "20.19.0"
+  },
+  "packageManager": "pnpm@10.9.0"
 }

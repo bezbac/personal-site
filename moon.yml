@@ -1,0 +1,35 @@
+tasks:
+  dev:
+    command: "astro dev"
+    platform: "node"
+    local: true
+    options:
+      persistent: true
+
+  build:
+    command: "astro build"
+    platform: "node"
+    inputs:
+      - "src/**"
+      - "public/**"
+      - "astro.config.mjs"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "tsconfig.json"
+    outputs:
+      - "dist/**"
+
+  preview:
+    command: "astro preview"
+    platform: "node"
+    local: true
+
+  format-check:
+    command: "prettier --check ."
+    platform: "node"
+    local: true
+
+  format-write:
+    command: "prettier --write ."
+    platform: "node"
+    local: true

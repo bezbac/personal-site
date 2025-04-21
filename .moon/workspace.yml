@@ -1,0 +1,12 @@
+# https://moonrepo.dev/docs/config/workspace
+$schema: "./cache/schemas/workspace.json"
+
+projects:
+  root: "."
+
+vcs:
+  manager: "git"
+  defaultBranch: "main"
+  hooks:
+    pre-commit:
+      - "moon run :format-check --affected"
