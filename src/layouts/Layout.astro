@@ -47,25 +47,44 @@ const currentPath = Astro.url.pathname;
   <body>
     <div
       class:list={[
-        "container",
-        currentPath === "/" ? "pt-12 desktop:pt-24" : "pt-8",
+        "container flex items-center",
+        currentPath === "/" ? "pt-8 tablet:pt-12 desktop:pt-24" : "pt-8",
       ]}
     >
       <div class="font-medium">
         <a href="/">
           <ScrambledText client:load text="Ben Bachem" />
         </a>
-        {
-          currentPath !== "/" && (
-            <a
-              href={Astro.props.breadcrumb.href}
-              class="subtitle text-neutral-380 hover:text-accent ml-1"
-            >
-              / {Astro.props.breadcrumb.title}
-            </a>
-          )
-        }
       </div>
+
+      <ul
+        class="flex ml-auto gap-4 dark:text-neutral-380 text-neutral-640 group"
+      >
+        <li>
+          <a
+            href="/"
+            aria-selected={currentPath === "/"}
+            class="aria-selected:text-neutral-310 group-hover:aria-selected:text-neutral-640 hover:text-neutral-310! dark:aria-selected:text-neutral-820 dark:group-hover:aria-selected:text-neutral-380 dark:hover:text-neutral-820! transition"
+            >/ home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/blog"
+            aria-selected={currentPath.startsWith("/blog")}
+            class="aria-selected:text-neutral-310 group-hover:aria-selected:text-neutral-640 hover:text-neutral-310! dark:aria-selected:text-neutral-820 dark:group-hover:aria-selected:text-neutral-380 dark:hover:text-neutral-820! transition"
+            >/ writing</a
+          >
+        </li>
+        <li>
+          <a
+            href="/uses"
+            aria-selected={currentPath.startsWith("/uses")}
+            class="aria-selected:text-neutral-310 group-hover:aria-selected:text-neutral-640 hover:text-neutral-310! dark:aria-selected:text-neutral-820 dark:group-hover:aria-selected:text-neutral-380 dark:hover:text-neutral-820! transition"
+            >/ uses</a
+          >
+        </li>
+      </ul>
     </div>
     <slot />
     <div
