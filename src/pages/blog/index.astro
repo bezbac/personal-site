@@ -29,11 +29,11 @@ function formatDate(date: Date) {
   </div>
   <div class="container mx-auto relative">
     <h1 class="mt-12 font-medium">Writing</h1>
-    <ul class="text-neutral-310 dark:text-neutral-820 space-y-1 mt-4">
+    <ul class="text-prose-normal space-y-1 mt-4">
       {
         posts.map((post) => (
           <li>
-            <span class="mr-2 text-neutral-640 tabular-nums">
+            <span class="mr-2 text-prose-subtle tabular-nums">
               {formatDate(post.data.published)}
             </span>
             <a href={`/blog/${post.id}`} class="link">

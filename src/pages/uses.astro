@@ -87,7 +87,7 @@ import Layout from "../layouts/Layout.astro";
           ] as const
         ).map(({ title, items }) => {
           return (
-            <div class="flex py-4 text-neutral-380 dark:text-shadow-neutral-820">
+            <div class="flex py-4 text-prose-normal">
               <h2 class="w-1/3 shrink-0 text-base font-normal">{title}</h2>
               <ul class="flex flex-wrap gap-3">
                 {items.map((item) => {
@@ -112,7 +112,7 @@ import Layout from "../layouts/Layout.astro";
                   );
 
                   return (
-                    <li class="group rounded border dark:text-neutral-820 border-neutral-820 py-0.5 px-3 text-sm dark:border-neutral-310 dark:bg-neutral-230 [&>span]:text-neutral-640 [&>span]:dark:text-neutral-640">
+                    <li class="group rounded border text-prose-normal border-neutral-820 py-0.5 px-3 text-sm dark:border-neutral-310 dark:bg-neutral-230 [&>span]:text-prose-subtle">
                       {content}
                     </li>
                   );

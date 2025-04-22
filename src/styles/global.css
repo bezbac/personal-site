@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
 :root {
+  --var-color-neutral-190: oklch(0.19 0 0);
+  --var-color-neutral-230: oklch(0.23 0 0);
+  --var-color-neutral-310: oklch(0.31 0 0);
+  --var-color-neutral-380: oklch(0.38 0 0);
+  --var-color-neutral-640: oklch(0.64 0 0);
+  --var-color-neutral-820: oklch(0.82 0 0);
+  --var-color-neutral-910: oklch(0.91 0 0);
+  --var-color-neutral-980: oklch(0.98 0 0);
+}
+
+:root {
   --var-color-accent: oklch(0.67 0.1674 284.69);
+
+  --var-color-prose-inverted: #fff;
+  --var-color-prose-muted: var(--var-color-neutral-640);
+  --var-color-prose-subtle: var(--var-color-neutral-640);
+  --var-color-prose-normal: var(--var-color-neutral-310);
+  --var-color-prose-strong: #000;
 }
 
 :root[class~="dark"] {
   --var-color-accent: oklch(0.72 0.13 126.28);
+
+  --var-color-prose-inverted: #000;
+  --var-color-prose-muted: var(--var-color-neutral-380);
+  --var-color-prose-subtle: var(--var-color-neutral-640);
+  --var-color-prose-normal: var(--var-color-neutral-820);
+  --var-color-prose-strong: #fff;
 }
 
 @theme {
@@ -19,16 +42,23 @@
   --color-*: initial;
   --color-white: #fff;
   --color-black: #000;
-  --color-neutral-190: oklch(0.19 0 0);
-  --color-neutral-230: oklch(0.23 0 0);
-  --color-neutral-310: oklch(0.31 0 0);
-  --color-neutral-380: oklch(0.38 0 0);
-  --color-neutral-640: oklch(0.64 0 0);
-  --color-neutral-820: oklch(0.82 0 0);
-  --color-neutral-910: oklch(0.91 0 0);
-  --color-neutral-980: oklch(0.98 0 0);
 
   --color-accent: var(--var-color-accent);
+
+  --color-neutral-190: var(--var-color-neutral-190);
+  --color-neutral-230: var(--var-color-neutral-230);
+  --color-neutral-310: var(--var-color-neutral-310);
+  --color-neutral-380: var(--var-color-neutral-380);
+  --color-neutral-640: var(--var-color-neutral-640);
+  --color-neutral-820: var(--var-color-neutral-820);
+  --color-neutral-910: var(--var-color-neutral-910);
+  --color-neutral-980: var(--var-color-neutral-980);
+
+  --color-prose-inverted: var(--var-color-prose-inverted);
+  --color-prose-muted: var(--var-color-prose-muted);
+  --color-prose-subtle: var(--var-color-prose-subtle);
+  --color-prose-normal: var(--var-color-prose-normal);
+  --color-prose-strong: var(--var-color-prose-strong);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -45,12 +75,12 @@
 
 @utility link {
   @apply relative cursor-pointer border-b hover:border-accent hover:bg-accent transition duration-75 ring-2 ring-transparent hover:ring-accent rounded-xs;
-  @apply text-black hover:text-white border-neutral-820;
-  @apply dark:text-white dark:hover:text-black dark:border-neutral-380;
+  @apply text-prose-strong hover:text-prose-inverted;
+  @apply border-neutral-820 dark:border-neutral-380;
 }
 
 @utility prose {
-  @apply text-justify text-neutral-310 dark:text-neutral-820;
+  @apply text-justify text-prose-normal;
 
   ol,
   ul {
@@ -102,7 +132,7 @@
   h4,
   h5,
   h6 {
-    @apply my-4 font-medium empty:hidden text-black dark:text-white;
+    @apply my-4 font-medium empty:hidden text-prose-strong;
   }
 
   p {
@@ -128,11 +158,11 @@ body {
 }
 
 body {
-  @apply m-0 w-full h-full bg-neutral-980 dark:bg-neutral-190 dark:text-white flex flex-col font-sans;
+  @apply m-0 w-full h-full bg-neutral-980 dark:bg-neutral-190 text-prose-strong flex flex-col font-sans;
 }
 
 p {
-  @apply text-neutral-310 dark:text-neutral-820;
+  @apply text-prose-normal;
 }
 
 a.link {
