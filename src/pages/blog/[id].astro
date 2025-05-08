@@ -14,8 +14,11 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout breadcrumb={{ title: "writing", href: "/blog" }}>
-  <article class="container prose pt-12">
+<Layout
+  ogImageUrl={`/blog/${post.id}.png`}
+  breadcrumb={{ title: "writing", href: "/blog" }}
+>
+  <article class="container prose pt-12 pb-12">
     <h1>
       {post.data.title}
     </h1>

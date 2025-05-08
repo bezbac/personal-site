@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "dependencies": {
     "@astrojs/react": "^4.2.4",
+    "@fontsource/figtree": "^5.2.7",
+    "@resvg/resvg-js": "^2.6.2",
     "@tabler/icons-react": "^3.31.0",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
@@ -11,10 +13,12 @@
     "astro": "^5.7.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "satori": "^0.12.2",
     "tailwindcss": "^4.1.4",
     "use-scramble": "^2.2.15"
   },
   "devDependencies": {
+    "@types/node": "^20",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1"
   },
