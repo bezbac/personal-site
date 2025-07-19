@@ -84,7 +84,7 @@ const currentPath = Astro.url.pathname;
             href="/"
             aria-selected={currentPath === "/"}
             class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/ home</a
+            >/<span class="inline-block w-0.5"></span>home</a
           >
         </li>
         <li>
@@ -92,7 +92,7 @@ const currentPath = Astro.url.pathname;
             href="/blog"
             aria-selected={currentPath.startsWith("/blog")}
             class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/ writing</a
+            >/<span class="inline-block w-0.5"></span>writing</a
           >
         </li>
         <li>
@@ -100,7 +100,7 @@ const currentPath = Astro.url.pathname;
             href="/uses"
             aria-selected={currentPath.startsWith("/uses")}
             class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/ uses</a
+            >/<span class="inline-block w-0.5"></span>uses</a
           >
         </li>
       </ul>

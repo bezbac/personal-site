@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
 :root {
+  font-size: 16px;
+
+  @variant desktop {
+    font-size: 18px;
+  }
+}
+
+:root {
   --var-color-neutral-190: oklch(0.19 0 0);
   --var-color-neutral-230: oklch(0.23 0 0);
   --var-color-neutral-310: oklch(0.31 0 0);
   --var-color-neutral-380: oklch(0.38 0 0);
   --var-color-neutral-640: oklch(0.64 0 0);
-  --var-color-neutral-820: oklch(0.82 0 0);
-  --var-color-neutral-910: oklch(0.91 0 0);
-  --var-color-neutral-980: oklch(0.98 0 0);
+  --var-color-neutral-820: oklch(0.82 0.005 85);
+  --var-color-neutral-910: oklch(0.91 0.01 85);
+  --var-color-neutral-980: oklch(0.98 0.015 85);
 }
 
 :root {
-  --var-color-accent: oklch(0.67 0.1674 284.69);
+  --var-color-accent: oklch(0.67 0.17 285);
 
   --var-color-prose-inverted: #fff;
   --var-color-prose-muted: var(--var-color-neutral-640);
@@ -22,7 +30,7 @@
 }
 
 :root[class~="dark"] {
-  --var-color-accent: oklch(0.72 0.13 126.28);
+  --var-color-accent: oklch(0.8 0.17 275);
 
   --var-color-prose-inverted: #000;
   --var-color-prose-muted: var(--var-color-neutral-380);
@@ -68,7 +76,7 @@
   padding-inline: 1rem;
 
   @variant desktop {
-    max-width: 44rem;
+    max-width: 42rem;
     padding-inline: 2rem;
   }
 }
