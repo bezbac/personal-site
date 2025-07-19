@@ -3,7 +3,6 @@ import "../styles/global.css";
 import ThemeButton from "../components/ThemeButton";
 import { Font } from "astro:assets";
 import { IconMoon, IconSun } from "@tabler/icons-react";
-import ScrambledText from "../components/ScrambledText";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -76,9 +75,7 @@ const currentPath = Astro.url.pathname;
       ]}
     >
       <div class="font-medium">
-        <a href="/">
-          <ScrambledText client:load text="Ben Bachem" />
-        </a>
+        <a href="/"> Ben Bachem </a>
       </div>
 
       <ul class="flex ml-auto gap-4 group">

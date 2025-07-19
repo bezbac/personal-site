@@ -44,9 +44,6 @@ importers:
       tailwindcss:
         specifier: ^4.1.5
         version: 4.1.5
-      use-scramble:
-        specifier: ^2.2.15
-        version: 2.2.15(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@types/node':
         specifier: ^20.17.45
@@ -1892,13 +1889,6 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
-
-  use-scramble@2.2.15:
-    resolution: {integrity: sha512-3+ngTV6OpkY9JT75FM4JYcspmpP7cd/h0/5KqsMU2jcdBD+SAuBMmLqLu0N3/7t8NsfdwJjD3BBeKtT+qZWKew==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
 
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
@@ -4067,11 +4057,6 @@ snapshots:
       browserslist: 4.24.5
       escalade: 3.2.0
       picocolors: 1.1.1
-
-  use-scramble@2.2.15(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
-    dependencies:
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
 
   vfile-location@5.0.3:
     dependencies:
