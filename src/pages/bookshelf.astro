@@ -1,0 +1,259 @@
+---
+import { IconStarFilled, IconStarHalfFilled } from "@tabler/icons-react";
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+
+const BOOKS = [
+  {
+    title: "Careless People",
+    year: 2025,
+    rating: 6,
+    isbn: "9781250391247",
+  },
+  {
+    title: "The Anomaly",
+    year: 2025,
+    rating: 7,
+    isbn: "9780241540480",
+  },
+  {
+    title: "When Einstein Walked with Gödel",
+    year: 2025,
+    rating: 8,
+    isbn: "9780374146702",
+  },
+  {
+    title: "Chip War",
+    year: 2024,
+    rating: 5,
+  },
+  {
+    title: "Sapiens",
+    year: 2024,
+    rating: 8,
+  },
+  {
+    title: "The Algebra of Wealth",
+    year: 2024,
+    rating: 8,
+    isbn: "9780593714027",
+  },
+  {
+    title: "Babel",
+    year: 2024,
+    rating: 9,
+    isbn: "9780063021433",
+  },
+  {
+    title: "Technofeudalism",
+    year: 2024,
+    rating: 7,
+  },
+  {
+    title: "The Coming Wave",
+    year: 2024,
+    rating: 8,
+    isbn: "9780593593967",
+  },
+  {
+    title: "The Mountain in the Sea",
+    year: 2023,
+    rating: 7,
+    isbn: "9781399600484",
+  },
+  {
+    title: "Tracers in the Dark",
+    year: 2023,
+    rating: 10,
+    isbn: "9780385548090",
+  },
+  {
+    title: "Debt: The First 5000 Years",
+    year: 2023,
+    rating: 5,
+    isbn: "9781933633862",
+  },
+  {
+    title: "I Am a Strange Loop",
+    year: 2023,
+    rating: 6,
+  },
+  {
+    title: "Stories of Your Life and Others",
+    year: 2023,
+    rating: 9,
+    isbn: "9781931520720",
+  },
+  {
+    title: "Four Thousand Weeks",
+    year: 2023,
+    rating: 5,
+    isbn: "9781784704001",
+  },
+  {
+    title: "Factfulness",
+    year: 2023,
+    rating: 7,
+  },
+  {
+    title: "Humankind",
+    year: 2022,
+    rating: 8,
+    isbn: "9780316206907",
+  },
+  {
+    title: "Piranesi",
+    year: 2022,
+    rating: 8,
+    isbn: "9781432895082",
+  },
+  {
+    title: "The Contrarian",
+    year: 2022,
+    rating: 6,
+  },
+  {
+    title: "The Righteous Mind",
+    year: 2022,
+    rating: 6,
+    isbn: "9780141039169",
+  },
+  {
+    title: "Dopamine Nation",
+    year: 2022,
+    rating: 7,
+  },
+  {
+    title: "Brief Answers to the Big Questions",
+    year: 2022,
+    rating: 7,
+  },
+  {
+    title: "The Idealist",
+    year: 2021,
+    rating: 7,
+  },
+  {
+    title: "All Systems Red",
+    year: 2021,
+    rating: 7,
+    isbn: "9780765397539",
+  },
+  {
+    title: "The Three-Body Problem",
+    year: 2021,
+    rating: 7,
+  },
+  {
+    title: "The Hidden Reality",
+    year: 2021,
+    rating: 5,
+    isbn: "9780307278128",
+  },
+  {
+    title: "The Hidden Girl and Other Stories",
+    year: 2021,
+    rating: 7,
+    isbn: "9781982134044",
+  },
+  {
+    title: "Project Hail Mary",
+    year: 2021,
+    rating: 10,
+  },
+  {
+    title: "The Man Who Solved the Market",
+    year: 2021,
+    rating: 8,
+  },
+  {
+    title: "Exhalation: Stories",
+    year: 2020,
+    rating: 9,
+    isbn: "9781101972083",
+  },
+  {
+    title: "Permanent Record",
+    year: 2020,
+    rating: 6,
+    isbn: "9781250237231",
+  },
+  {
+    title: "The Age of Surveillance Capitalism",
+    year: 2020,
+    rating: 6,
+  },
+  {
+    title: "Bad Blood",
+    year: 2019,
+    rating: 8,
+    isbn: "9781524731656",
+  },
+  {
+    title: "Surely You're Joking, Mr. Feynman!",
+    year: 2019,
+    rating: 8,
+  },
+];
+---
+
+<Layout breadcrumb={{ title: "bokshelf", href: "#" }}>
+  <div class="container mx-auto relative">
+    <p class="mt-8">
+      Here&apos;s a selection of some of the books I've read recently.<br /> Cover
+      images are provided by{" "}
+      <a class="link external" href="https://openlibrary.org/" target="_blank">
+        Open Library
+      </a>.
+    </p>
+
+    <div class="mt-12 lg:mt-20 mb-12">
+      <ol
+        class="flex flex-col divide-y divide-neutral-820 dark:divide-neutral-310"
+      >
+        {
+          BOOKS.map(({ title, year, rating, isbn }) => {
+            const encodedTitle = encodeURIComponent(title);
+            const imageFile = isbn
+              ? `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`
+              : `https://covers.openlibrary.org/b/title/${encodedTitle}-L.jpg`;
+            return (
+              <li class="flex py-2 text-prose-normal items-center group relative cursor-default">
+                <div class="relative flex items-center">
+                  <span>{title}</span>
+                  <div class="absolute left-full top-1/2 -translate-y-1/2 ml-4 w-32 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20">
+                    <Picture
+                      src={imageFile}
+                      alt={`Cover of ${title}`}
+                      class="bg-white dark:bg-neutral-380 rounded shadow-lg border border-neutral-190 dark:border-neutral-640"
+                      style="min-width:8rem;"
+                      width={288}
+                      height={432}
+                    />
+                  </div>
+                </div>
+                <div class="ml-auto" aria-label={`Read in ${year}`}>
+                  {year}
+                </div>
+                <div
+                  class="ml-4 flex items-center gap-1"
+                  aria-label={`Rating: ${rating} out of 10`}
+                >
+                  {Array.from({ length: 5 }).map((_, i) =>
+                    rating >= i * 2 + 2 ? (
+                      <IconStarFilled className="size-3" />
+                    ) : rating >= i * 2 + 1 ? (
+                      <IconStarHalfFilled className="size-3" />
+                    ) : (
+                      <IconStarFilled className="size-3 opacity-30" />
+                    ),
+                  )}
+                </div>
+              </li>
+            );
+          })
+        }
+      </ol>
+    </div>
+  </div>
+</Layout>
