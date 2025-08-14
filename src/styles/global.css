@@ -2,10 +2,6 @@
 
 :root {
   font-size: 16px;
-
-  @variant desktop {
-    font-size: 18px;
-  }
 }
 
 :root {
@@ -72,11 +68,22 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @utility container {
-  padding-inline: 1rem;
+  max-width: none;
+
+  @variant tablet {
+    max-width: 48rem;
+  }
 
   @variant desktop {
     max-width: 40rem;
-    padding-inline: 2rem;
+  }
+}
+
+@utility px-container {
+  padding-inline: 1rem;
+
+  @variant desktop {
+    padding-inline: 2.5rem;
   }
 }
 

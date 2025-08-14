@@ -10,6 +10,29 @@ import {
 } from "@tabler/icons-react";
 
 const currentPath = Astro.url.pathname;
+
+const NAVIGATION_LINKS = [
+  {
+    title: "home",
+    href: "/",
+    selected: currentPath === "/",
+  },
+  {
+    title: "writing",
+    href: "/blog",
+    selected: currentPath.startsWith("/blog"),
+  },
+  {
+    title: "bookshelf",
+    href: "/bookshelf",
+    selected: currentPath.startsWith("/bookshelf"),
+  },
+  {
+    title: "uses",
+    href: "/uses",
+    selected: currentPath.startsWith("/uses"),
+  },
+];
 ---
 
 <style>
@@ -73,49 +96,49 @@ const currentPath = Astro.url.pathname;
     <Font cssVariable="--font-figtree" preload />
   </head>
   <body>
+    <div
+      class="desktop:hidden border-b border-neutral-910 dark:border-neutral-310 py-4"
+    >
+      <ul class="text-right flex gap-4 container mx-auto px-4">
+        {
+          NAVIGATION_LINKS.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                aria-selected={link.selected}
+                class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
     <div class="flex">
       <aside
-        class="w-full max-w-[12rem] sticky top-0 h-screen flex flex-col p-12"
+        class="w-full max-w-[12rem] sticky top-0 h-screen flex flex-col py-12 hidden desktop:flex"
       >
         <!-- <div class="absolute size-16 bg-[red]"></div> -->
-        <ul class="text-right">
-          <li>
-            <a
-              href="/"
-              aria-selected={currentPath === "/"}
-              class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
-              >home</a
-            >
-          </li>
-          <li>
-            <a
-              href="/blog"
-              aria-selected={currentPath.startsWith("/blog")}
-              class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
-              >writing</a
-            >
-          </li>
-          <li>
-            <a
-              href="/bookshelf"
-              aria-selected={currentPath === "/bookshelf"}
-              class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
-              >bookshelf</a
-            >
-          </li>
-          <li>
-            <a
-              href="/uses"
-              aria-selected={currentPath.startsWith("/uses")}
-              class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
-              >uses</a
-            >
-          </li>
+        <ul class="text-right px-12">
+          {
+            NAVIGATION_LINKS.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  aria-selected={link.selected}
+                  class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
 
         <div class="mt-auto"></div>
 
-        <div class="flex flex-col ml-auto text-right">
+        <div class="flex flex-col ml-auto text-right px-12">
           <ThemeButton
             client:load
             mode="dark"
@@ -130,9 +153,13 @@ const currentPath = Astro.url.pathname;
           >
         </div>
 
-        <div class="w-full h-px bg-neutral-910 dark:bg-neutral-310 my-3"></div>
+        <div class="px-6 my-6">
+          <div class="w-full h-px bg-neutral-910 dark:bg-neutral-310"></div>
+        </div>
 
-        <ul class="flex gap-0.5 -ml-1 w-[calc(100%+0.5rem)] justify-between">
+        <ul
+          class="flex gap-0.5 -ml-1 w-[calc(100%+0.5rem)] justify-between px-12"
+        >
           <li>
             <a
               href="https://github.com/bezbac"
@@ -162,8 +189,10 @@ const currentPath = Astro.url.pathname;
       <div class="sticky top-0 w-px py-8">
         <div class="w-px h-full bg-neutral-910 dark:bg-neutral-310"></div>
       </div>
-      <div class="flex-1">
-        <div class="container flex items-center pt-12"></div>
+      <div
+        class="flex-1 tablet:container tablet:mx-auto desktop:mx-0 desktop:max-w-none"
+      >
+        <div class="container flex items-center pt-4 desktop:pt-12"></div>
         <slot />
       </div>
     </div>
