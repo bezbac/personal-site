@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout breadcrumb={{ title: "uses", href: "#" }}>
-  <div class="container mx-auto relative">
-    <p class="mt-8">
+  <div class="container relative">
+    <p class="px-container">
       Here&apos;s a list of my favorite tools & applications. These are things I
       use profesionally or to maintain an organized digital life. For an always
       up to date version and details regarding configuration, see my{" "}
@@ -18,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
       .
     </p>
 
-    <p class="mt-4">
+    <p class="mt-4 px-container">
       Inspired by{" "}
       <a
         target="_blank"
@@ -32,7 +32,7 @@ import Layout from "../layouts/Layout.astro";
     </p>
 
     <div
-      class="mt-12 flex flex-col divide-y divide-neutral-820 dark:divide-neutral-190 lg:mt-20"
+      class="mt-12 flex flex-col divide-y divide-neutral-910 dark:divide-neutral-310 lg:mt-20"
     >
       {
         (
@@ -91,7 +91,7 @@ import Layout from "../layouts/Layout.astro";
           ] as const
         ).map(({ title, items }) => {
           return (
-            <div class="flex py-4 text-prose-normal">
+            <div class="flex py-4 px-container text-prose-normal">
               <h2 class="w-1/3 shrink-0 text-base font-normal">{title}</h2>
               <ul class="flex flex-wrap gap-3">
                 {items.map((item) => {

@@ -205,18 +205,10 @@ const BOOKS = [
 ---
 
 <Layout breadcrumb={{ title: "bokshelf", href: "#" }}>
-  <div class="container mx-auto relative">
-    <p class="mt-8">
-      Here&apos;s a selection of some of the books I've read recently.<br /> Cover
-      images are provided by{" "}
-      <a class="link external" href="https://openlibrary.org/" target="_blank">
-        Open Library
-      </a>.
-    </p>
-
-    <div class="mt-12 lg:mt-20 mb-12">
+  <div class="container px-container relative">
+    <div class="mb-12">
       <ol
-        class="flex flex-col divide-y divide-neutral-820 dark:divide-neutral-310"
+        class="flex flex-col divide-y divide-neutral-820 dark:divide-neutral-310 -mt-2"
       >
         {
           BOOKS.map(({ title, year, rating, isbn }) => {
@@ -262,5 +254,12 @@ const BOOKS = [
         }
       </ol>
     </div>
+
+    <p class="mb-12">
+      Cover images are provided by{" "}
+      <a class="link external" href="https://openlibrary.org/" target="_blank">
+        Open Library
+      </a>.
+    </p>
   </div>
 </Layout>

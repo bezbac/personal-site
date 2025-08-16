@@ -3,8 +3,36 @@ import "../styles/global.css";
 import ThemeButton from "../components/ThemeButton";
 import { Font } from "astro:assets";
 import { IconMoon, IconSun } from "@tabler/icons-react";
+import {
+  IconBrandBluesky,
+  IconBrandGithub,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 
 const currentPath = Astro.url.pathname;
+
+const NAVIGATION_LINKS = [
+  {
+    title: "home",
+    href: "/",
+    selected: currentPath === "/",
+  },
+  {
+    title: "writing",
+    href: "/blog",
+    selected: currentPath.startsWith("/blog"),
+  },
+  {
+    title: "bookshelf",
+    href: "/bookshelf",
+    selected: currentPath.startsWith("/bookshelf"),
+  },
+  {
+    title: "uses",
+    href: "/uses",
+    selected: currentPath.startsWith("/uses"),
+  },
+];
 ---
 
 <style>
@@ -69,64 +97,103 @@ const currentPath = Astro.url.pathname;
   </head>
   <body>
     <div
-      class:list={[
-        "container flex items-center",
-        currentPath === "/" ? "pt-8 tablet:pt-12 desktop:pt-24" : "pt-8",
-      ]}
+      class="desktop:hidden border-b border-neutral-910 dark:border-neutral-310 py-4"
     >
-      <div class="font-medium">
-        <a href="/"> Ben Bachem </a>
-      </div>
-
-      <ul class="flex ml-auto gap-4 group">
-        <li>
-          <a
-            href="/"
-            aria-selected={currentPath === "/"}
-            class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/<span class="inline-block w-0.5"></span>home</a
-          >
-        </li>
-        <li>
-          <a
-            href="/blog"
-            aria-selected={currentPath.startsWith("/blog")}
-            class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/<span class="inline-block w-0.5"></span>writing</a
-          >
-        </li>
-        <li>
-          <a
-            href="/uses"
-            aria-selected={currentPath.startsWith("/uses")}
-            class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
-            >/<span class="inline-block w-0.5"></span>uses</a
-          >
-        </li>
+      <ul class="text-right flex gap-4 container mx-auto px-4">
+        {
+          NAVIGATION_LINKS.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                aria-selected={link.selected}
+                class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
-    <slot />
-    <div
-      class="w-full mt-auto flex items-center border-t dark:border-neutral-230 border-neutral-910"
-    >
-      <div class="container flex py-4 gap-2 text-sm text-prose-muted">
-        <div>Copyright © Ben Bachem</div>
-        <div class="ml-auto flex gap-2">
+    <div class="flex">
+      <aside
+        class="w-full max-w-[12rem] sticky top-0 h-screen flex flex-col py-12 hidden desktop:flex"
+      >
+        <!-- <div class="absolute size-16 bg-[red]"></div> -->
+        <ul class="text-right px-12">
+          {
+            NAVIGATION_LINKS.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  aria-selected={link.selected}
+                  class="text-prose-muted aria-selected:text-prose-normal group-hover:aria-selected:text-prose-muted hover:text-prose-normal! transition font-[serif] italic"
+                >
+                  {link.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <div class="mt-auto"></div>
+
+        <div class="flex flex-col ml-auto text-right px-12">
           <ThemeButton
             client:load
             mode="dark"
-            className="cursor-pointer hover:text-prose-strong aria-selected:text-accent"
-            aria-label="Enable dark mode"
-            ><IconMoon className="size-4.5" /></ThemeButton
+            className="cursor-pointer hover:text-prose-strong aria-selected:text-accent font-[serif] italic"
+            aria-label="Enable dark mode">dark</ThemeButton
           >
           <ThemeButton
             client:load
             mode="light"
-            className="cursor-pointer hover:text-prose-strong aria-selected:text-accent"
-            aria-label="Enable light mode"
-            ><IconSun className="size-4.5" /></ThemeButton
+            className="cursor-pointer hover:text-prose-strong aria-selected:text-accent font-[serif] italic"
+            aria-label="Enable light mode">light</ThemeButton
           >
         </div>
+
+        <div class="px-6 my-6">
+          <div class="w-full h-px bg-neutral-910 dark:bg-neutral-310"></div>
+        </div>
+
+        <ul
+          class="flex gap-0.5 -ml-1 w-[calc(100%+0.5rem)] justify-between px-12"
+        >
+          <li>
+            <a
+              href="https://github.com/bezbac"
+              target="_blank"
+              class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
+              aria-label="GitHub"><IconBrandGithub className="size-5" /></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://bsky.app/profile/bezbac.me"
+              target="_blank"
+              class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
+              aria-label="BlueSky"><IconBrandBluesky className="size-5" /></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ben-bachem"
+              target="_blank"
+              class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
+              aria-label="LinkedIn"><IconBrandLinkedin className="size-5" /></a
+            >
+          </li>
+        </ul>
+      </aside>
+      <div class="sticky top-0 w-px py-8">
+        <div class="w-px h-full bg-neutral-910 dark:bg-neutral-310"></div>
+      </div>
+      <div
+        class="flex-1 tablet:container tablet:mx-auto desktop:mx-0 desktop:max-w-none"
+      >
+        <div class="container flex items-center pt-4 desktop:pt-12"></div>
+        <slot />
       </div>
     </div>
   </body>
