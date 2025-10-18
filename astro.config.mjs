@@ -25,6 +25,15 @@ export default defineConfig({
     },
   },
 
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: "gruvbox-light-medium",
+        dark: "gruvbox-dark-medium",
+      },
+    },
+  },
+
   integrations: [react()],
 
   image: {

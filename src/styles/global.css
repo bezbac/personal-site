@@ -207,3 +207,14 @@ a.external::after {
   @apply inline-block size-4 rotate-180 -ml-1 translate-y-2 mr-0.5;
   content: "⟀";
 }
+
+@variant dark {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
