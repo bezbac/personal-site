@@ -11,7 +11,8 @@
   --var-color-neutral-380: oklch(0.38 0 0);
   --var-color-neutral-640: oklch(0.64 0 0);
   --var-color-neutral-820: oklch(0.82 0.005 85);
-  --var-color-neutral-910: oklch(0.91 0.01 85);
+  --var-color-neutral-910: oklch(0.91 0.015 85);
+  --var-color-neutral-950: oklch(0.95 0.015 85);
   --var-color-neutral-980: oklch(0.98 0.015 85);
 }
 
@@ -33,6 +34,34 @@
   --var-color-prose-subtle: var(--var-color-neutral-640);
   --var-color-prose-normal: var(--var-color-neutral-820);
   --var-color-prose-strong: #fff;
+}
+
+:root {
+  --shiki-foreground: var(--var-color-neutral-310);
+  --shiki-background: var(--var-color-neutral-950);
+  --shiki-token-constant: oklch(0.6312 0.1153 242.04);
+  --shiki-token-string: oklch(0.8289 0.087661 252.4582);
+  --shiki-token-comment: oklch(0.5514 0.019 250.98);
+  --shiki-token-keyword: oklch(0.6564 0.1537 354.88);
+  --shiki-token-parameter: oklch(0.7571 0.1484 63.35);
+  --shiki-token-function: oklch(0.7267 0.1367 299.15);
+  --shiki-token-string-expression: oklch(0.67 0.17 220);
+  --shiki-token-punctuation: oklch(0.8857 0.1586 95.78);
+  --shiki-token-link: oklch(0.6312 0.1153 242.04);
+}
+
+:root[class~="dark"] {
+  --shiki-foreground: var(--var-color-neutral-910);
+  --shiki-background: var(--var-color-neutral-310);
+  --shiki-token-constant: oklch(0.6312 0.1153 242.04);
+  --shiki-token-string: oklch(0.8289 0.087661 252.4582);
+  --shiki-token-comment: oklch(0.5514 0.019 250.98);
+  --shiki-token-keyword: oklch(0.6564 0.1537 354.88);
+  --shiki-token-parameter: oklch(0.7571 0.1484 63.35);
+  --shiki-token-function: oklch(0.7267 0.1367 299.15);
+  --shiki-token-string-expression: oklch(0.67 0.17 220);
+  --shiki-token-punctuation: oklch(0.8857 0.1586 95.78);
+  --shiki-token-link: oklch(0.6312 0.1153 242.04);
 }
 
 @theme {
@@ -206,15 +235,4 @@ a.link {
 a.external::after {
   @apply inline-block size-4 rotate-180 -ml-1 translate-y-2 mr-0.5;
   content: "⟀";
-}
-
-@variant dark {
-  .astro-code,
-  .astro-code span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-    font-style: var(--shiki-dark-font-style) !important;
-    font-weight: var(--shiki-dark-font-weight) !important;
-    text-decoration: var(--shiki-dark-text-decoration) !important;
-  }
 }

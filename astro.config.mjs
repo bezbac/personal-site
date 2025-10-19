@@ -1,9 +1,17 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
+import { createCssVariablesTheme } from "shiki/core";
 
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
+
+const cssVariableShikiTheme = createCssVariablesTheme({
+  name: "css-variables",
+  variablePrefix: "--shiki-",
+  variableDefaults: {},
+  fontStyle: true,
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,10 +35,7 @@ export default defineConfig({
 
   markdown: {
     shikiConfig: {
-      themes: {
-        light: "gruvbox-light-medium",
-        dark: "gruvbox-dark-medium",
-      },
+      theme: cssVariableShikiTheme,
     },
   },
 
