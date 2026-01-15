@@ -92,6 +92,17 @@
   --color-prose-subtle: var(--var-color-prose-subtle);
   --color-prose-normal: var(--var-color-prose-normal);
   --color-prose-strong: var(--var-color-prose-strong);
+
+  --animate-fade-in: fade-in 0.4s forwards;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

@@ -2,6 +2,7 @@
 import { IconStarFilled, IconStarHalfFilled } from "@tabler/icons-react";
 import Layout from "../layouts/Layout.astro";
 import { Picture } from "astro:assets";
+import Popover from "../components/Popover";
 
 const BOOKS = [
   {
@@ -249,17 +250,22 @@ const BOOKS = [
             return (
               <li class="flex py-2 text-prose-normal items-center group relative cursor-default">
                 <div class="relative flex items-center">
-                  <span>{title}</span>
-                  <div class="absolute left-full top-1/2 -translate-y-1/2 ml-4 w-32 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20">
-                    <Picture
-                      src={imageFile}
-                      alt={`Cover of ${title}`}
-                      class="bg-white dark:bg-neutral-380 rounded shadow-lg border border-neutral-190 dark:border-neutral-640"
-                      style="min-width:8rem;"
-                      width={288}
-                      height={432}
-                    />
-                  </div>
+                  <Popover as="span" client:load>
+                    {title}
+                    <div
+                      slot="popup"
+                      class="w-32 pointer-events-none animate-fade-in"
+                    >
+                      <Picture
+                        src={imageFile}
+                        alt={`Cover of ${title}`}
+                        class="bg-white dark:bg-neutral-380 rounded shadow-lg border border-neutral-190 dark:border-neutral-640"
+                        style="min-width:8rem;"
+                        width={288}
+                        height={432}
+                      />
+                    </div>
+                  </Popover>
                 </div>
                 <div class="ml-auto" aria-label={`Read in ${year}`}>
                   {year}
@@ -275,7 +281,7 @@ const BOOKS = [
                       <IconStarHalfFilled className="size-3" />
                     ) : (
                       <IconStarFilled className="size-3 opacity-30" />
-                    )
+                    ),
                   )}
                 </div>
               </li>
