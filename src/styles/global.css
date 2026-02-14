@@ -86,6 +86,8 @@
   --color-neutral-640: var(--var-color-neutral-640);
   --color-neutral-820: var(--var-color-neutral-820);
   --color-neutral-910: var(--var-color-neutral-910);
+  --color-neutral-950: var(--var-color-neutral-950);
+  --color-neutral-960: var(--var-color-neutral-960);
   --color-neutral-980: var(--var-color-neutral-980);
 
   --color-prose-inverted: var(--var-color-prose-inverted);
@@ -224,6 +226,10 @@
 
   a {
     @apply link;
+  }
+
+  p > code {
+    @apply text-xs px-1 py-0.5 rounded bg-neutral-950 dark:bg-neutral-310;
   }
 }
 
