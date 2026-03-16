@@ -41,10 +41,6 @@ export default defineConfig({
 
   integrations: [react()],
 
-  image: {
-    domains: ["covers.openlibrary.org"],
-  },
-
   fonts: [
     {
       name: "Figtree",
