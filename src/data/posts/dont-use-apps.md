@@ -3,6 +3,7 @@ title: Don't use an app for that!
 description: Of simple habits and digital artifacts that last
 published: 2024-04-23T08:14:00+02:00
 keywords: [media-consumtion, habits, file-over-app]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3fmjcg2z"
 ---
 
 Friends of mine know that I'm somewhat obsessive regarding tracking the media I consume. Over the past nearly ten years, I've written down almost every movie I've seen, every episode of every TV show I watched, and every book I've read, for some periods, even which pages on which dates. I keep track of all of this data in spreadsheets.

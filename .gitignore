@@ -27,3 +27,5 @@ pnpm-debug.log*
 .moon/cache
 .moon/docker
 .moon/hooks
+
+.sequoia-state.json

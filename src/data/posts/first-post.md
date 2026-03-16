@@ -3,6 +3,7 @@ title: My First Post
 description: The try at introducing this website and why I built a blog in 2023
 published: 2023-03-18T13:33:00+01:00
 keywords: [blog, internet spirit, digital business card]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3fqakl2q"
 ---
 
 After a long time of tweaking this site, I finally sat down to create this first blog post.

@@ -84,6 +84,14 @@ const NAVIGATION_LINKS = [
         </>
       )
     }
+    {
+      Astro.props.standardSiteDocumentUrl && (
+        <link
+          rel="site.standard.document"
+          href={Astro.props.standardSiteDocumentUrl}
+        />
+      )
+    }
     <script is:inline>
       const theme = localStorage.getItem("theme");
 

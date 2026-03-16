@@ -1,0 +1,13 @@
+{
+  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
+  "siteUrl": "https://www.benbachem.de",
+  "contentDir": "./src/data/posts",
+  "outputDir": "./dist",
+  "pathPrefix": "/blog",
+  "publicationUri": "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.publication/3mh6pkanp2k2q",
+  "pdsUrl": "https://porcini.us-east.host.bsky.network",
+  "frontmatter": {
+    "publishDate": "published",
+    "tags": "keywords"
+  }
+}

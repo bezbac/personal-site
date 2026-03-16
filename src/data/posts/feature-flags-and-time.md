@@ -3,6 +3,7 @@ title: Feature Flags and Time - Lessons from a Production Incident
 description: Reflecting on an incident and how feature flags can create unexpected challenges when time is a factor.
 published: 2025-05-08T09:40:00+02:00
 keywords: [feature flag, distributed system, consistency, temporal coupling]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3ff44d2q"
 ---
 
 Feature flags are often seen as simple on/off switches, but when time becomes a factor, unexpected complexities can arise. I recently encountered this firsthand during a minor production incident at work.

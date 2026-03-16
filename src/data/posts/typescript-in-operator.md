@@ -3,6 +3,7 @@ title: Prefer explicit discriminators over "x" in y in TypeScript
 description: A look at why the "x" in y syntax in TypeScript can lead to dead code.
 published: 2026-02-14T12:07:00+01:00
 keywords: [typescript, discriminator, union, dead code]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3eke3q2i"
 ---
 
 In TypeScript, using the `if ("x" in y)` syntax alters the definition of `y`, since the compiler understands it as a guard statement, it will permit all subsequent property accesses of x. In practice this can lead to dead code. Often, a better approach is using explicit discriminator properties instead.
