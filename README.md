@@ -8,5 +8,7 @@
 
 ## Cloudflare pages configuration
 
-Build command: `pnpm dlx @moonrepo/cli run build`  
+<!-- The cli version should match that in .prototools -->
+
+Build command: `pnpm --package=@moonrepo/cli@1.41.5 dlx moon run build`  
 Build output directory: `dist`
