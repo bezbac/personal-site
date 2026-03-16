@@ -45,13 +45,11 @@ export default defineConfig({
     domains: ["covers.openlibrary.org"],
   },
 
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Figtree",
-        cssVariable: "--font-figtree",
-      },
-    ],
-  },
+  fonts: [
+    {
+      name: "Figtree",
+      cssVariable: "--font-figtree",
+      provider: fontProviders.google(),
+    },
+  ],
 });
