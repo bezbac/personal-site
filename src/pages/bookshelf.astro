@@ -247,8 +247,8 @@ const BOOKS = [
           BOOKS.map(({ title, year, rating, isbn }) => {
             const encodedTitle = encodeURIComponent(title);
             const imageFile = isbn
-              ? `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`
-              : `https://covers.openlibrary.org/b/title/${encodedTitle}-L.jpg`;
+              ? `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`
+              : `https://covers.openlibrary.org/b/title/${encodedTitle}-M.jpg`;
             return (
               <li class="flex py-2 text-prose-normal items-center group relative cursor-default">
                 <div class="relative flex items-center">
