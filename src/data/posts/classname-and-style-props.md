@@ -3,6 +3,7 @@ title: Don't pass className to your components
 description: Why className and style props make your life harder, not easier
 published: 2026-04-06T11:22:00Z
 keywords: [react, css, component-design, tailwind, typescript, design-systems]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mit5q4eqaf26"
 ---
 
 I believe that not passing `className` or `style` props to components is an important principle for building scalable React applications. This post explains why, and what to do instead.

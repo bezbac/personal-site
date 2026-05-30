@@ -3,6 +3,7 @@ title: Switching from Backblaze to resticprofile
 description: My experience switching backup providers
 published: 2026-05-30T16:00:00Z
 keywords: [backup, backblaze, hetzner, restic, resticprofile, macOS, hetzner storage box]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mn3gvlmuk62z"
 ---
 
 I have three Mac computers: one work laptop, one personal laptop, and one Mac mini that runs my homelab. The Mac mini has a 4-bay Terramaster D4-320 attached to it with some external storage and a large hard drive used for backing up the Mac and the external drives locally through Time Machine. I do not back up any data from the work or personal laptops as they don't store anything that I couldn't lose. All my code lives on GitHub and my personal repositories are being mirrored to my homelab. I have my photos and notes in iCloud, mirrored as well, and additional files such as an archive of RAW photos from my camera or old backups from my phones simply live on external drives connected to my Mac mini. So effectively, anything that is important to me is stored on the Mac mini.
