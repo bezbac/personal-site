@@ -6,6 +6,10 @@ keywords: [wezterm, hyperlink_rules, vscode, zellij, dotfiles, productivity]
 atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3fj42a2g"
 ---
 
+> Edit from 2026-07-01: Zellij v0.44.0 now contains [built-in functionality for opening links](https://zellij.dev/news/remote-sessions-windows-cli/#click-to-open-file-paths). I also maintain a [fork of the builtin plugin with extended capabilities](https://github.com/bezbac/zellij-link-extended). I am no longer using the method described below.
+
+---
+
 For the past year and a half, I've been using WezTerm[^1] and Zellij[^2] as my terminal and multiplexer of choice. Zellij has some hiccups here and there but the discoverability of shortcuts feels great, making it much easier to pick up than something like tmux in my opinion. Plus, both tools are written in Rust, which is always a bonus!
 
 Over the years, my terminal setup has evolved a bit. I started with iTerm2[^3], which I liked for its features but found a bit slow when handling rapid screen updates (e.g., scrolling through large files in Nvim). I then switched to Alacritty[^4] for its speed but eventually moved on because it lacked support for ligatures. Now, WezTerm + Zellij feels like the perfect balance for my workflow.
