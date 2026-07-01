@@ -18,6 +18,8 @@ const { Content } = await render(post);
   standardSiteDocumentUrl={post.data.atUri}
   ogImageUrl={`/blog/${post.id}.png`}
   breadcrumb={{ title: "writing", href: "/blog" }}
+  published={post.data.published}
+  updated={post.data.updated}
 >
   <article class="container px-container prose pb-12">
     <h1>

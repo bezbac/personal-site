@@ -76,6 +76,22 @@ const NAVIGATION_LINKS = [
       name="twitter:description"
     />
     {
+      Astro.props.published && (
+        <meta
+          property="article:published_time"
+          content={Astro.props.published.toISOString()}
+        />
+      )
+    }
+    {
+      Astro.props.updated && (
+        <meta
+          property="article:modified_time"
+          content={Astro.props.updated.toISOString()}
+        />
+      )
+    }
+    {
       Astro.props.ogImageUrl && (
         <>
           <meta property="og:image" content={Astro.props.ogImageUrl} />

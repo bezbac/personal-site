@@ -2,6 +2,7 @@
 title: Getting Wezterm + Zellij to Open Files in VS Code
 description: How to use WezTerm's hyperlink rules to open files in VS Code from Zellij
 published: 2025-04-12T21:00:00+02:00
+updated: 2026-07-01T22:37:00+02:00
 keywords: [wezterm, hyperlink_rules, vscode, zellij, dotfiles, productivity]
 atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mhaz3fj42a2g"
 ---
