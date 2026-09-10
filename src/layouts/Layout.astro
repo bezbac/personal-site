@@ -34,6 +34,9 @@ const NAVIGATION_LINKS = [
     selected: currentPath.startsWith("/uses"),
   },
 ];
+
+const title = Astro.props.title ? `${Astro.props.title} | Ben Bachem` : "Ben Bachem";
+const description = Astro.props.description ?? "Hey there! I'm Ben. I build all kinds of digital things.";
 ---
 
 <style>
@@ -59,20 +62,20 @@ const NAVIGATION_LINKS = [
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Ben Bachem</title>
+    <title>{title}</title>
     <meta
       name="description"
-      content="Hey there! I'm Ben. I build all kinds of digital things."
+      content={description}
     />
     <meta
       property="og:description"
-      content="Hey there! I'm Ben. I build all kinds of digital things."
+      content={description}
     />
-    <meta content="Ben Bachem" property="og:title" />
+    <meta content={title} property="og:title" />
     <meta content="summary" name="twitter:card" />
-    <meta content="Ben Bachem" name="twitter:title" />
+    <meta content={title} name="twitter:title" />
     <meta
-      content="Hey there! I'm Ben. I build all kinds of digital things."
+      content={description}
       name="twitter:description"
     />
     {
