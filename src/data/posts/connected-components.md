@@ -3,6 +3,7 @@ title: Connected and presentational components
 description: My favorite way of organizing React codebases
 published: 2026-09-10T08:40:00+02:00
 keywords: [react, storybook, typescript, patterns, data-fetching, testing]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mv5h5h4n642a"
 ---
 
 I've been meaning to write about this for ages. I believe for most applications splitting your React codebase into "Connected" and presentational components is most likely the single best architectural choice you can make. At Superchat we followed the pattern religiously. Now that I'm at Langfuse, code is not organized this way and it has made me a little uncomfortable with the codebase. I think it's almost as strong as the feeling I remember having after using TypeScript for a while and then going back to an untyped JavaScript codebase, so I thought it was finally time to sit down and write about it.
