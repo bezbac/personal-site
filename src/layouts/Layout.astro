@@ -35,8 +35,12 @@ const NAVIGATION_LINKS = [
   },
 ];
 
-const title = Astro.props.title ? `${Astro.props.title} | Ben Bachem` : "Ben Bachem";
-const description = Astro.props.description ?? "Hey there! I'm Ben. I build all kinds of digital things.";
+const title = Astro.props.title
+  ? `${Astro.props.title} | Ben Bachem`
+  : "Ben Bachem";
+const description =
+  Astro.props.description ??
+  "Hey there! I'm Ben. I build all kinds of digital things.";
 ---
 
 <style>
@@ -63,21 +67,12 @@ const description = Astro.props.description ?? "Hey there! I'm Ben. I build all 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <meta
-      name="description"
-      content={description}
-    />
-    <meta
-      property="og:description"
-      content={description}
-    />
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
     <meta content={title} property="og:title" />
     <meta content="summary" name="twitter:card" />
     <meta content={title} name="twitter:title" />
-    <meta
-      content={description}
-      name="twitter:description"
-    />
+    <meta content={description} name="twitter:description" />
     {
       Astro.props.published && (
         <meta

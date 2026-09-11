@@ -2,7 +2,16 @@
 title: Switching from Backblaze to resticprofile
 description: My experience switching backup providers
 published: 2026-05-30T16:00:00Z
-keywords: [backup, backblaze, hetzner, restic, resticprofile, macOS, hetzner storage box]
+keywords:
+  [
+    backup,
+    backblaze,
+    hetzner,
+    restic,
+    resticprofile,
+    macOS,
+    hetzner storage box,
+  ]
 atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mn3gvlmuk62z"
 ---
 
@@ -35,9 +44,11 @@ With everything said, there are a few small things that I think could be better.
 Another very minor annoyance I had was that while there is a [hosted manual for restic](https://restic.readthedocs.io/en/latest/manual_rest.html#manual), the resticprofile docs only contain information about the existence of a help command without actually including its full output. [^2]
 
 [^1]: https://rareese.com/posts/backblaze/
+
 [^2]: https://creativeprojects.github.io/resticprofile/configuration/getting_started/index.html#inline-help
 
 For reference, here's my final setup script:
+
 ```bash
 # Install resticprofile
 brew install restic
@@ -75,6 +86,7 @@ resticprofile schedule --all
 ```
 
 and here's resticprofile configuration, with a few minor edits to allow publishing it online:
+
 ```toml
 #:schema https://creativeprojects.github.io/resticprofile/jsonschema/config-1.json
 

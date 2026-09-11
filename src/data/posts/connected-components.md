@@ -23,27 +23,34 @@ src/components/UserCard/UserCard.stories.tsx
 ```
 
 With the `ConnectedUserCard` being as simple as this:
-```tsx
-import React from "react"
-import UserCard from "./UserCard"
-import { useUser } from "@repo/react-api-client"
 
-type UserCardProps = React.ComponentProps<typeof UserCard>
+```tsx
+import React from "react";
+import UserCard from "./UserCard";
+import { useUser } from "@repo/react-api-client";
+
+type UserCardProps = React.ComponentProps<typeof UserCard>;
 
 type ConnectedUserCardProps = Omit<UserCardProps, "user"> & {
-  user: { id: string }
-}
+  user: { id: string };
+};
 
 function ConnectedUserCard(props: ConnectedUserCardProps) {
-  const userQuery = useUser(props.user.id)
-  
+  const userQuery = useUser(props.user.id);
+
   if (!userQuery.data) {
-    return <UserCard isLoading />
+    return <UserCard isLoading />;
   }
 
-  const user = userQuery.data
+  const user = userQuery.data;
 
-  return <UserCard username={user.username} bio={user.bio} location={user.location} />
+  return (
+    <UserCard
+      username={user.username}
+      bio={user.bio}
+      location={user.location}
+    />
+  );
 }
 ```
 
@@ -54,9 +61,11 @@ Now looking at the example above, you might be wondering why I'd bother introduc
 Let's take the user card component from above and assume we don't have a formalized split between connected and presentational components. Is the following a good idea?
 
 ```tsx
-{[alice, bob, simon, john].map((user) => (
+{
+  [alice, bob, simon, john].map((user) => (
     <UserCard key={user.id} user={user} />
-))}
+  ));
+}
 ```
 
 I'd say if you are unsure whether the component does API requests, probably not. Let's say the component fetches some metadata of the user and then renders the user's name and a bio. This means the code above might now fire four API calls.[^2] Now imagine dropping it into a table with hundreds of rows, oblivious to its network behavior.
@@ -199,7 +208,6 @@ Over time, you could then remove the prefix from components that don't need it. 
 ## Where the Pattern Breaks Down
 
 I'll close this post by looking at types of applications where I think this pattern might be difficult to apply. At Superchat we struggled with it when we started building our [Automations](https://www.superchat.com/product/automations) feature, which is similar to Zapier or n8n. In Automations, we had a lot of complicated logic for rendering nodes in an interactive canvas and the API calls would generally only happen quite far down in the component tree. This meant that following the principle laid out here, most of the components had to be prefixed with "Connected" since using a connected component as a child of a non-connected component is not allowed. You could get around this a bit by using render functions in props but it can get unwieldy quickly and the effort of working around the pattern might outweigh the benefits. Generally, if you'd need most of the components in your application to be connected, the pattern might not be worth it. But let's face it, many of us are not building these kinds of applications but rather traditional SaaS where most of the application is a collection of forms and tables. Even if you are building an application akin to Figma or Zapier, you might still have large parts of your application where this could be applied (think about all the settings pages). The nice thing about the pattern is that if splitting the components is too difficult, just prefix all of them with "Connected" and be done with it, you can always come back later and split components once you want to reuse them somewhere else.
-
 
 [^1]: I have used the term function coloring for a while, but never _really_ knew where it originated from. While writing this post, I went looking for a suitable reference and [What Color is Your Function?](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/) came up as the source that apparently coined the term. The concept as I know it is about async functions and is generally considered a design flaw. I'm borrowing the term and applying it to components: a component's color is determined by whether it makes network calls, and, like async's color, decides where the component can be used. Instead of a flaw, I see the color as a feature and embrace the coloring rather than trying to design it away.
 
