@@ -1,13 +1,13 @@
 tasks:
   dev:
-    command: "astro dev"
+    command: "pnpm dev"
     platform: "node"
     local: true
     options:
       persistent: true
 
   build:
-    command: "astro build"
+    command: "pnpm build"
     platform: "node"
     inputs:
       - "src/**"
@@ -20,16 +20,22 @@ tasks:
       - "dist/**"
 
   preview:
-    command: "astro preview"
+    command: "pnpm preview"
     platform: "node"
     local: true
 
   format-check:
-    command: "prettier --check ."
+    command: "pnpm format-check"
     platform: "node"
-    local: true
+    options:
+      cache: false
 
   format-write:
-    command: "prettier --write ."
+    command: "pnpm format-write"
     platform: "node"
-    local: true
+    options:
+      cache: false
+
+  knip:
+    command: "pnpm knip"
+    platform: "node"

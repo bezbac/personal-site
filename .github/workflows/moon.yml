@@ -16,4 +16,4 @@ jobs:
         with:
           moon-version: "1.41.5"
 
-      - run: "moon ci :format-check :build"
+      - run: "moon ci :format-check :knip :build"
