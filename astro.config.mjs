@@ -33,6 +33,11 @@ export default defineConfig({
     },
   },
 
+  image: {
+    domains: ["covers.openlibrary.org", "archive.org"],
+    remotePatterns: [{ hostname: "*.us.archive.org" }],
+  },
+
   markdown: {
     shikiConfig: {
       theme: cssVariableShikiTheme,
