@@ -9,6 +9,7 @@ import {
   IconSun,
   IconMoonStars,
 } from "@tabler/icons-react";
+import { BLUESKY_URL, GITHUB_URL, LINKED_IN_URL } from "../constants";
 
 const currentPath = Astro.url.pathname;
 
@@ -193,7 +194,7 @@ const description =
         >
           <li>
             <a
-              href="https://github.com/bezbac"
+              href={GITHUB_URL}
               target="_blank"
               class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
               aria-label="GitHub"
@@ -202,7 +203,7 @@ const description =
           </li>
           <li>
             <a
-              href="https://bsky.app/profile/bezbac.me"
+              href={BLUESKY_URL}
               target="_blank"
               class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
               aria-label="BlueSky"
@@ -211,7 +212,7 @@ const description =
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/ben-bachem"
+              href={LINKED_IN_URL}
               target="_blank"
               class="p-1 flex items-center justify-center hover:bg-neutral-910 dark:hover:bg-neutral-310 rounded transition duration-75 text-prose-normal hover:text-prose-strong"
               aria-label="LinkedIn"
