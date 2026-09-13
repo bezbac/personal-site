@@ -4,9 +4,9 @@ import OgImage from "../../components/OgImage";
 import React from "react";
 import { renderSatoriImage } from "../../fns/renderSatoriImage";
 
-interface Props {
+type Props = {
   title: string;
-}
+};
 
 export async function GET(context: APIContext<Props>) {
   const { title } = context.props;

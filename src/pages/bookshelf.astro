@@ -299,12 +299,12 @@ const BOOKS = [
                     </div>
                   </Popover>
                 </div>
-                <div class="ml-auto" aria-label={`Read in ${year}`}>
+                <div class="ml-auto" aria-label={`Read in ${String(year)}`}>
                   {year}
                 </div>
                 <div
                   class="ml-4 flex items-center gap-1"
-                  aria-label={`Rating: ${rating} out of 10`}
+                  aria-label={`Rating: ${String(rating)} out of 10`}
                 >
                   {Array.from({ length: 5 }).map((_, i) =>
                     rating >= i * 2 + 2 ? (

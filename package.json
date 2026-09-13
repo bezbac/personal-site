@@ -20,12 +20,16 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.13.3",
+    "eslint": "^10.10.0",
+    "eslint-plugin-astro": "^3.1.0",
     "knip": "^6.35.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
     "sharp": "^0.35.3",
-    "typescript": "^7.0.2"
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.70.0"
   },
   "scripts": {
     "dev": "astro dev",
@@ -33,7 +37,9 @@
     "preview": "astro preview",
     "format-check": "prettier --check .",
     "format-write": "prettier --write .",
-    "knip": "knip"
+    "knip": "knip",
+    "lint": "astro sync && eslint .",
+    "lint-fix": "astro sync && eslint --fix ."
   },
   "engines": {
     "node": "24.4.1"

@@ -11,6 +11,16 @@ import {
 } from "@tabler/icons-react";
 import { BLUESKY_URL, GITHUB_URL, LINKED_IN_URL } from "../constants";
 
+type Props = {
+  title?: string;
+  description?: string;
+  published?: Date;
+  updated?: Date;
+  ogImageUrl?: string;
+  standardSiteDocumentUrl?: string;
+  breadcrumb: { title: string; href: string };
+};
+
 const currentPath = Astro.url.pathname;
 
 const NAVIGATION_LINKS = [

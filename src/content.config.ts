@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 
 // See: https://github.com/bluesky-social/atproto/blob/67eb0c19ac415e762e221b2ccda9f0bcf7b3dd6f/packages/syntax/src/aturi.ts#L22

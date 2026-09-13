@@ -13,7 +13,7 @@ export default function Popover({
   children,
   popup,
   as,
-}: React.PropsWithChildren<{ popup?: any; as: "span" | "div" }>) {
+}: React.PropsWithChildren<{ popup?: React.ReactNode; as: "span" | "div" }>) {
   const Tag = as;
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,13 +32,20 @@ export default function Popover({
 
   return (
     <>
-      <Tag ref={refs.setReference} {...getReferenceProps()}>
+      <Tag
+        ref={(el) => {
+          refs.setReference(el);
+        }}
+        {...getReferenceProps()}
+      >
         {children}
       </Tag>
       {isOpen && (
         <FloatingPortal>
           <div
-            ref={refs.setFloating}
+            ref={(el) => {
+              refs.setFloating(el);
+            }}
             style={floatingStyles}
             {...getFloatingProps()}
           >

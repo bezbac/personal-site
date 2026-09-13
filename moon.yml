@@ -39,3 +39,9 @@ tasks:
   knip:
     command: "pnpm knip"
     platform: "node"
+
+  lint:
+    command: "pnpm lint"
+    platform: "node"
+    options:
+      cache: false
