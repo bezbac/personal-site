@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { IconRss } from "@tabler/icons-react";
 
 import { getCollection } from "astro:content";
 const posts = (await getCollection("blog")).toSorted(
@@ -28,7 +29,12 @@ function formatDate(date: Date) {
     </div>
   </div>
   <div class="container px-container relative">
-    <h1 class="font-medium">Writing</h1>
+    <div class="flex items-center gap-3">
+      <h1 class="font-medium">Writing</h1>
+      <a href="/rss.xml" aria-label="RSS feed" class="link"
+        ><IconRss className="size-4" /></a
+      >
+    </div>
     <ul class="text-prose-normal space-y-1 mt-4">
       {
         posts.map((post) => (

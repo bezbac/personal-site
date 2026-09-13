@@ -6,6 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
+import { SITE_URL } from "./src/constants.ts";
+
 const cssVariableShikiTheme = createCssVariablesTheme({
   name: "css-variables",
   variablePrefix: "--shiki-",
@@ -15,6 +17,8 @@ const cssVariableShikiTheme = createCssVariablesTheme({
 
 // https://astro.build/config
 export default defineConfig({
+  site: SITE_URL,
+
   vite: {
     plugins: [tailwindcss()],
 
