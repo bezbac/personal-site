@@ -3,6 +3,7 @@ title: Vanishing components are an anti-pattern
 description: A component must always render its own root, whether it renders should be decided where it is used.
 published: 2026-10-11T18:30:00+02:00
 keywords: [react, typescript, clean code]
+atUri: "at://did:plc:hkutgcisjksjzjl7j2xwjbsw/site.standard.document/3mxmhjklt4g2t"
 ---
 
 Continuing the theme of the last post, here's another pattern I've come to rely on: a component must always render a root of its own, with the single exception of a component that does nothing but forward the caller's `children`. A component should not be allowed to render nothing. It can leave out parts of what it renders, but it should never make its entire output conditional. I'm calling these _vanishing components_: components that hide themselves in a way the caller can't see.
