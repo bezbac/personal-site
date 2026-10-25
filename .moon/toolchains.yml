@@ -1,6 +1,5 @@
 javascript:
   packageManager: pnpm
-node:
-  version: v24.4.1
+node: {}
 pnpm:
   versionFromPrototools: true

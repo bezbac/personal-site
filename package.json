@@ -42,7 +42,7 @@
     "lint-fix": "moon run lint-fix"
   },
   "engines": {
-    "node": "24.4.1"
+    "node": "24.22.1"
   },
   "packageManager": "pnpm@10.13.1"
 }
