@@ -1,14 +1,10 @@
 tasks:
   dev:
     command: "astro dev"
-    platform: "node"
-    local: true
-    options:
-      persistent: true
+    preset: "server"
 
   build:
     command: "astro build"
-    platform: "node"
     inputs:
       - "src/**"
       - "public/**"
@@ -21,33 +17,28 @@ tasks:
 
   preview:
     command: "astro preview"
-    platform: "node"
-    local: true
+    options:
+      runInCI: false
 
   format-check:
     command: "prettier --check ."
-    platform: "node"
     options:
       cache: false
 
   format-write:
     command: "prettier --write ."
-    platform: "node"
     options:
       cache: false
 
   knip:
     command: "knip"
-    platform: "node"
 
   lint:
-    command: "astro sync && eslint ."
-    platform: "node"
+    script: "astro sync && eslint ."
     options:
       cache: false
 
   lint-fix:
-    command: "astro sync && eslint --fix ."
-    platform: "node"
+    script: "astro sync && eslint --fix ."
     options:
       cache: false

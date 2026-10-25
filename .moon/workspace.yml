@@ -4,8 +4,10 @@ $schema: "./cache/schemas/workspace.json"
 projects:
   root: "."
 
+defaultProject: "root"
+
 vcs:
-  manager: "git"
+  client: "git"
   defaultBranch: "main"
   hooks:
     pre-commit:
