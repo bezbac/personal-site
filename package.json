@@ -32,14 +32,14 @@
     "typescript-eslint": "^8.70.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "format-check": "prettier --check .",
-    "format-write": "prettier --write .",
-    "knip": "knip",
-    "lint": "astro sync && eslint .",
-    "lint-fix": "astro sync && eslint --fix ."
+    "dev": "moon run dev",
+    "build": "moon run build",
+    "preview": "moon run preview",
+    "format-check": "moon run format-check",
+    "format-write": "moon run format-write",
+    "knip": "moon run knip",
+    "lint": "moon run lint",
+    "lint-fix": "moon run lint-fix"
   },
   "engines": {
     "node": "24.4.1"
